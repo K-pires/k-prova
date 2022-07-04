@@ -40,3 +40,14 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+
+.conteiner {
+  
+  display: flex;
+  flex-direction: center;
+  
+  align-items: center;
+
+  width: 1200px;
+  height: 50px;
+}
