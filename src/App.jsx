@@ -1,40 +1,95 @@
-import Button from "./Button";
 import Card from "./Card";
+import "./App.css"
+import Menu from "./Menu";
 
 function App(){
-	const pokemons = [
+	const paginas = [
 		{
-			id: "#001",
-			nome: "Bulbasaur",
-			foto: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
-			tipo: "Gra / Venenoso",
+			foto: "logo.svg"
 		},
 		{
-			id: "#002",
-			nome: "Ivysaur",
-			foto: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png",
-			tipo: "Grama / Venenoso",
+			nome: "Entregador",
 		},
 		{
-			id: "#003",
-			nome: "Venusaur",
-			foto: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png",
-			tipo: "Grama / Venenoso",
+			nome: "Restaurante e Mercado",
+		},
+		{
+			nome: "Carreiras",
+		},
+		{
+			nome: "iFood Card",
+		},
+		{
+			nome1: "Criar conta",
+		},
+		{
+			nome2: "Entrar"
+		}
+	];
+
+
+	const sites = [
+		{	
+			foto: "big-king.webp",
+			nome: "Combo Big King",
+			des: "Um Hambúrguer com duas carnes bovinas grelhadas de 57g. pão com gergelin, queijo...",
+			qtd: "Serve 1 pessoa",
+			preco: "R$ 41,90"
+		},
+		{	
+			foto: "cheddar-duplo.webp",
+			nome: "Combo Combo Cheddar Duplo",
+			des: "Um Hambúrguer com duas carnes bovinas grelhadas de 57g. pão preto com gergelin...",
+			qtd: "Serve 1 pessoa",
+			preco: "R$ 41,90"
+		},
+		{	
+			foto: "cheeseburger-duplo.webp",
+			nome: "Combo Cheeseburguer Duplo com Bacon",
+			des: "Um Hambúrguer com duas carnes bovinas grelhadas de 57g. pão com gergelin, queijo...",
+			qtd: "Serve 1 pessoa",
+			preco: "R$ 36,90"
+		},
+		{	
+			foto: "mega-stacker.webp",
+			nome: "Combo Mega Stacker 2.0",
+			des: "Um Hambúrguer com duas carnes bovinas grelhadas de 113g. pão com gergelin, queijo...",
+			qtd: "Serve 1 pessoa",
+			preco: "R$ 51,90"
 		},
 	];
 
 	return(
-		<div>
+		<div className="conteiner0">
+			<div>
 			{
-				pokemons.map((poke, id) => {
-					return <Card key={id}
-							id={poke.id}
-							nome={poke.nome}
-							foto={poke.foto}
-							tipo={poke.tipo}
+				paginas.map((pag) => {
+					return <Card 
+							nome={pag.nome}
+							foto={pag.foto}
+							nome1={pag.nome1}
+							nome2={pag.nome2}
 						/>;
 				})
 			}
+			</div>
+
+			<div>Destaque</div>
+			
+			<div className="produto">
+			{
+				sites.map((info) => {
+					return (
+					<Menu  foto={info.foto}
+							nome={info.nome}
+							des={info.des}
+							qtd={info.qtd}
+							preco={info.preco}
+						/>
+					)
+				})
+			}
+			</div>
 		</div>
 	);
 }
